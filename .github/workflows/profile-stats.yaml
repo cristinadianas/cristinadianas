@@ -8,30 +8,48 @@ on:
 permissions:
   contents: write
 
+# Avoid two scheduled runs writing to the profile branch at the same time.
+concurrency:
+  group: profile-visuals
+  cancel-in-progress: false
+
 jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      # One SVG with the same two sections as the language screenshot:
-      # in-depth authored-code breakdown + languages from recent push events.
-      - name: Generate green language breakdown
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+
+      # Restores the 3D contribution visual you had BEFORE the last change.
+      - name: Create original 3D contribution calendar
+        uses: seijikohara/profile-cards-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          username: cristinadianas
+          cards: contributions
+          output-dir: assets
+          themes: light,dark
+          palette: green
+          commit: false
+
+      # Keep the detailed MOST USED part of Metrics, but disable the event-feed-
+      # based recently-used mode (which says "no recent push activity").
+      - name: Generate most-used languages
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: cristinadianas
           filename: assets/metrics-languages.svg
+          output_action: none
           base: ""
           template: classic
           config_display: large
           plugin_languages: yes
           plugin_languages_indepth: yes
-          plugin_languages_sections: most-used, recently-used
+          plugin_languages_sections: most-used
           plugin_languages_categories: programming, markup, data
-          plugin_languages_recent_categories: programming, markup, data
           plugin_languages_details: lines, bytes-size, percentage
           plugin_languages_limit: 8
-          plugin_languages_recent_load: 300
-          plugin_languages_recent_days: 30
           plugin_languages_analysis_timeout: 30
           commits_authoring: cristinadianas, Cristina-Diana Savin, cristinadianasavin@gmail.com
           plugin_languages_colors: "0:#10B981,1:#84CC16,2:#34D399,3:#38BDF8,4:#FBBF24,5:#A3E635,6:#5EEAD4,7:#A7F3D0"
@@ -41,21 +59,24 @@ jobs:
             h1, h2, h3, h4, a, .title { color: #6EE7B7 !important; }
             .field, .metadata, small, .muted { color: #A4D5B8 !important; }
 
-      # This is the isometric contributions plugin.
-      # Its built-in statistics include 'highest in a day' and average per day.
-      - name: Generate green isometric contribution calendar
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: cristinadianas
-          filename: assets/metrics-contributions.svg
-          base: ""
-          template: classic
-          config_display: large
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
-          extras_css: |
-            html, body { background: #0B1712 !important; color: #DDFBEA !important; }
-            body * { border-color: #244A36 !important; }
-            h1, h2, h3, h4, a, .title { color: #6EE7B7 !important; }
-            .field, .metadata, small, .muted { color: #A4D5B8 !important; }
+      - name: Copy most-used languages chart into repository
+        run: |
+          mkdir -p assets
+          sudo cp /metrics_renders/assets/metrics-languages.svg assets/metrics-languages.svg
+
+      # Authored commit history, not GitHub's short-lived events feed.
+      - name: Generate recent languages and peak commit day
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: cristinadianas
+        run: python3 scripts/profile_activity.py
+
+      - name: Commit refreshed visualizations
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/
+          if ! git diff --staged --quiet; then
+            git commit -m 'chore: refresh GitHub profile visuals [skip ci]'
+            git push
+          fi
