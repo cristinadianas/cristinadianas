@@ -123,9 +123,7 @@
     src="https://img.shields.io/badge/CSS-27354C?style=flat&amp;logo=css&amp;logoColor=FFFFFF"
     height="18"
   />
-</p>
-
-<p>
+<br>
   <img
     alt="AI &amp; scientific Python"
     src="https://img.shields.io/badge/AI%20%26%20scientific%20Python-DCCAFF?style=flat"
@@ -176,9 +174,7 @@
     src="https://img.shields.io/badge/Segment%20Anything-372B4E?style=flat&amp;logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZD0iTTkgM0g0YTEgMSAwIDAgMC0xIDF2NW0xMi02aDVhMSAxIDAgMCAxIDEgMXY1TTMgMTV2NWExIDEgMCAwIDAgMSAxaDVtNiAwaDVhMSAxIDAgMCAwIDEtMXYtNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRDVDNUZGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik03IDEzbDQtNSAzIDMgMi0yIDIgNHY0SDd6IiBmaWxsPSIjQzJBOUZDIi8%2BPC9zdmc%2B"
     height="18"
   />
-</p>
-
-<p>
+<br>
   <img
     alt="Data &amp; analytics"
     src="https://img.shields.io/badge/Data%20%26%20analytics-FFD8B8?style=flat"
@@ -234,9 +230,7 @@
     src="https://img.shields.io/badge/openpyxl-493429?style=flat&amp;logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHJlY3QgeD0iMyIgeT0iMyIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiByeD0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQThFNkI5IiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNCA4aDE2TTQgMTRoMTZNMTAgOHYxMm01LTEydjEyIiBzdHJva2U9IiNBOEU2QjkiIHN0cm9rZS13aWR0aD0iMS42Ii8%2BPHBhdGggZD0iTTQgNWExIDEgMCAwIDEgMS0xaDE0YTEgMSAwIDAgMSAxIDF2Mkg0eiIgZmlsbD0iI0E4RTZCOSIvPjwvc3ZnPg%3D%3D"
     height="18"
   />
-</p>
-
-<p>
+<br>
   <img
     alt="Application development"
     src="https://img.shields.io/badge/Application%20development-D5EAC8?style=flat"
@@ -282,9 +276,7 @@
     src="https://img.shields.io/badge/Power%20Apps-2D4036?style=flat&amp;logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y%2BmAAAAwFBMVEXelM%2Fik8jXZbnjjMdtIW5tJWvQZrdxJnCBNXmkVJbRY7h3M3eENnuAK4CLPIC4VbjTa7rafcLqlb%2Fnn8v%2F%2F%2F9yJHLnmcxTGlSNLIdmG2fyt9zSZrjsp9PjjMb2w%2BHIWrDVdrqUNou0SaOBKn3dhcOkOpiqQ5u9VKhaIFrbfMFeGGBqJ2p0JHFyJXKPRYfjjsdXF1h0HW1gJV5jIWN5NXWaVI%2BwUZzkicTjjMfll8npoMtZFVlPFlJfGWFVK1VqH3CLoBQ9AAAAQHRSTlMQ3CW0redgYF%2FjrA80BqcS0qcMQAD%2B%2Ff7%2B%2F%2F7%2B%2Fv7%2F%2Fvn7%2F%2Fz7%2F%2Fr7%2Bfr5FCWT%2FyixEf9TN%2F36E482lDzEewYpvy8yRgAAAV9JREFUeNpV0tdygzAQBVBh3NMTFYMAgY3BvcY1xf%2F%2FV9lVweQ%2BCc7cHcoSajNfzM2BXIi7Zw%2BLJmNs%2BQTXV85jn9Rx22KYJaXXCDBPGzVcMpP9h7G0f8ebNTbx0KapVO0Km4G1gy1KJR12Ah0mdp41qfI3g78tg0KsVqsUhwKGYUPjjzOBo1NtPEk8xPmsbixDlEmSQJXQjQCdgU1GiEEJFgEmnJIv4cIGqAGTcoqWhG2yuZvBoJAhUhhyUhUHEI1BjAKJSK2oq%2FC%2BUejw29hkYJEFKTcU5WRvcKQR52acRyCQNqFZS4hdZgyrOQfFTOE9H5Uqh%2BPM4YFzoxw%2FAu1JNSycMu7yqr%2FtQwnVYmyw5yx%2BMb%2FsGap2cFYV%2B%2B5nH5Wy1dSZX21CV7pn8uzMeH1fsMIObl60xPG5tn2fSj8To9RHir1Tfam7R1UWoy1cn8H89b%2BNh3JnYQ7v65O79weKJ0yty8K7RwAAAABJRU5ErkJggg%3D%3D"
     height="18"
   />
-</p>
-
-<p>
+<br>
   <img
     alt="Development tools"
     src="https://img.shields.io/badge/Development%20tools-D4DFEF?style=flat"
@@ -340,9 +332,7 @@
     src="https://img.shields.io/badge/LaTeX-313C4C?style=flat&amp;logo=latex&amp;logoColor=A5E4D2"
     height="18"
   />
-</p>
-
-<p>
+<br>
   <img
     alt="Hardware &amp; electronics"
     src="https://img.shields.io/badge/Hardware%20%26%20electronics-F5CEE2?style=flat"
