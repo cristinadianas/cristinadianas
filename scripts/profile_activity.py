@@ -218,6 +218,7 @@ LANGUAGE_COLORS = {
     'light': ('#08705c', '#2853a6', '#6b3ca7', '#38a98e', '#568bd8', '#a374d0', '#719ab1', '#8981c5'),
     'dark': ('#45ba9f', '#6b9df7', '#b084ed', '#1a856f', '#3c65be', '#854cc4', '#85b8cc', '#8682d4'),
 }
+ACCENT_BLUE = {'light': '#2853a6', 'dark': '#92b9ff'}
 CALENDAR_RAMPS = {
     'light': (
         ('#9be9a8', '#40c463', '#30a14e', '#216e39'),
@@ -313,17 +314,16 @@ def languages_svg(most_used, recently_used, dark: bool) -> str:
     recent, height = language_section('Recently used languages', *recently_used, recent_colors, end + 9, 'recent-bar')
     if dark:
         bg, border, fg, secondary, track = '#0d1117', '#3d444d', '#f0f6fc', '#a1a9b4', '#30363d'
-        green, blue, purple = '#60cfb2', '#92b9ff', '#c7a4ff'
     else:
         bg, border, fg, secondary, track = '#ffffff', '#d1d9e0', '#1f2328', '#59636e', '#e1e6ed'
-        green, blue, purple = '#08705c', '#2853a6', '#6b3ca7'
+    blue = ACCENT_BLUE['dark' if dark else 'light']
     return '\n'.join([
         f'<svg xmlns="http://www.w3.org/2000/svg" width="846" height="{height}" viewBox="0 0 846 {height}" role="img">',
         '<title>Most used and recently used languages</title>',
         '<style>',
         'text{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif}',
-        f'.section-title{{fill:{green};font-size:17px;font-weight:600}}',
-        f'.recent .section-title{{fill:{purple}}}.count{{fill:{blue};font-size:18px;font-weight:600}}',
+        f'.section-title{{fill:{blue};font-size:17px;font-weight:600}}',
+        f'.count{{fill:{blue};font-size:18px;font-weight:600}}',
         f'.detail{{fill:{secondary};font-size:13px}}.language{{fill:{fg};font-size:16px}}',
         f'.icon{{fill:none;stroke:{secondary};stroke-width:1.4;stroke-linejoin:round}}.track{{fill:{track}}}',
         '</style>',
@@ -405,8 +405,8 @@ def recolor_calendar(root, theme):
             else:
                 index += 1
     # Recolor legend swatches and the shared header, icon, and glow accents.
-    accent = ('#3fb950', '#92b9ff') if theme == 'dark' else ('#1a7f37', '#2853a6')
-    colors[accent[0]] = accent[1]
+    original_accent = '#3fb950' if theme == 'dark' else '#1a7f37'
+    colors[original_accent] = ACCENT_BLUE[theme]
     svg = root.toxml()
     for old, new in colors.items():
         svg = svg.replace(old, new)
