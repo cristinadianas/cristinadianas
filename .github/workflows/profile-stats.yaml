@@ -20,7 +20,6 @@ jobs:
       - name: Check out profile repository
         uses: actions/checkout@v4
 
-      # Restores the 3D contribution visual you had BEFORE the last change.
       - name: Create original 3D contribution calendar
         uses: seijikohara/profile-cards-action@v1
         with:
@@ -32,8 +31,6 @@ jobs:
           palette: green
           commit: false
 
-      # Keep the detailed MOST USED part of Metrics, but disable the event-feed-
-      # based recently-used mode (which says "no recent push activity").
       - name: Generate most-used languages
         uses: lowlighter/metrics@latest
         with:
@@ -52,12 +49,6 @@ jobs:
           plugin_languages_limit: 8
           plugin_languages_analysis_timeout: 30
           commits_authoring: cristinadianas, Cristina-Diana Savin, cristinadianasavin@gmail.com
-          plugin_languages_colors: "0:#10B981,1:#84CC16,2:#34D399,3:#38BDF8,4:#FBBF24,5:#A3E635,6:#5EEAD4,7:#A7F3D0"
-          extras_css: |
-            html, body { background: #0B1712 !important; color: #DDFBEA !important; }
-            body * { border-color: #244A36 !important; }
-            h1, h2, h3, h4, a, .title { color: #6EE7B7 !important; }
-            .field, .metadata, small, .muted { color: #A4D5B8 !important; }
 
       - name: Copy most-used languages chart into repository
         run: |
@@ -65,7 +56,7 @@ jobs:
           sudo cp /metrics_renders/assets/metrics-languages.svg assets/metrics-languages.svg
 
       # Authored commit history, not GitHub's short-lived events feed.
-      - name: Generate recent languages and peak commit day
+      - name: Render language panels and update contribution stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: cristinadianas
