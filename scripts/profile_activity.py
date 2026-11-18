@@ -313,9 +313,9 @@ def languages_svg(most_used, recently_used, dark: bool) -> str:
     most, end = language_section('Most used languages', *most_used, most_colors, 15, 'most-used-bar')
     recent, height = language_section('Recently used languages', *recently_used, recent_colors, end + 9, 'recent-bar')
     if dark:
-        bg, border, fg, secondary, track = '#0d1117', '#3d444d', '#f0f6fc', '#a1a9b4', '#30363d'
+        border, fg, secondary, track = '#3d444d', '#f0f6fc', '#a1a9b4', '#30363d'
     else:
-        bg, border, fg, secondary, track = '#ffffff', '#d1d9e0', '#1f2328', '#59636e', '#e1e6ed'
+        border, fg, secondary, track = '#d1d9e0', '#1f2328', '#59636e', '#e1e6ed'
     blue = ACCENT_BLUE['dark' if dark else 'light']
     return '\n'.join([
         f'<svg xmlns="http://www.w3.org/2000/svg" width="846" height="{height}" viewBox="0 0 846 {height}" role="img">',
@@ -327,7 +327,6 @@ def languages_svg(most_used, recently_used, dark: bool) -> str:
         f'.detail{{fill:{secondary};font-size:13px}}.language{{fill:{fg};font-size:16px}}',
         f'.icon{{fill:none;stroke:{secondary};stroke-width:1.4;stroke-linejoin:round}}.track{{fill:{track}}}',
         '</style>',
-        f'<rect x="0.5" y="0.5" width="845" height="{height-1}" rx="12" fill="{bg}"/>',
         *most,
         f'<path d="M24 {end}h798" stroke="{border}"/>',
         '<g class="recent">',
@@ -416,10 +415,14 @@ def recolor_calendar(root, theme):
 def contribution_svg(source: str, stats, theme: str) -> str:
     """Restyle the upstream 3D calendar and use its trailing window for all four tiles."""
     root = minidom.parseString(source).documentElement
-    # The first top-level rectangle is the frame behind the calendar artwork.
-    background = next(node for node in elements(root) if node.localName == 'rect')
-    if background.hasAttribute('stroke'):
-        background.removeAttribute('stroke')
+    # The background and dark-mode glow are both inset to the canvas edges.
+    frame_width = f'{float(root.getAttribute("width")) - 1:g}'
+    frame_height = f'{float(root.getAttribute("height")) - 1:g}'
+    for node in elements(root):
+        if (node.localName == 'rect'
+                and node.getAttribute('width') == frame_width
+                and node.getAttribute('height') == frame_height):
+            root.removeChild(node)
     for group in elements(root):
         cards = {}
         for tile in elements(group):
