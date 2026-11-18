@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="846" height="418" viewBox="0 0 846 418" role="img">
+<title>Most used and recently used languages</title>
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif}
+.green{fill:#3fb950;font-size:17px;font-weight:600}.count{font-size:18px}
+.detail{fill:#9198a1;font-size:13px}.language{fill:#f0f6fc;font-size:16px}
+.icon{fill:none;stroke:#9198a1;stroke-width:1.4;stroke-linejoin:round}.track{fill:#30363d}
+</style>
+<rect x="0.5" y="0.5" width="845" height="417" rx="12" fill="#0d1117" stroke="#3d444d"/>
+<path d="M25 28h17v12H31l-5 4v-4h-1z m6 4-2 2 2 2 m4-4 2 2-2 2" class="icon"/>
+<text x="51" y="41" class="green count">15 Languages</text>
+<text x="423" y="75" text-anchor="middle" class="green">Most used languages</text>
+<text x="423" y="97" text-anchor="middle" class="detail">estimation from 26.9mb of code in 2107 edited files across 192 commits</text>
+<clipPath id="most-used-bar"><rect x="24" y="113" width="798" height="9" rx="4.5"/></clipPath>
+<g clip-path="url(#most-used-bar)"><rect x="24" y="113" width="798" height="9" class="track"/>
+<rect x="24.000" y="113" width="560.116" height="9" fill="#ededed"/>
+<rect x="584.116" y="113" width="168.139" height="9" fill="#663399"/>
+<rect x="752.255" y="113" width="31.521" height="9" fill="#ededed"/>
+<rect x="783.776" y="113" width="22.264" height="9" fill="#3572A5"/>
+<rect x="806.040" y="113" width="8.938" height="9" fill="#f34b7d"/>
+<rect x="814.978" y="113" width="2.873" height="9" fill="#a91e50"/>
+<rect x="817.850" y="113" width="2.075" height="9" fill="#e34c26"/>
+<rect x="819.925" y="113" width="1.995" height="9" fill="#ededed"/>
+</g>
+<circle cx="30" cy="142" r="5.5" fill="#ededed"/>
+<text x="47" y="147" class="language">CSV</text>
+<text x="407" y="147" class="detail" text-anchor="end">70.19%</text>
+<text x="336" y="147" class="detail" text-anchor="end">10.3 MB</text>
+<text x="254" y="147" class="detail" text-anchor="end">97.5k lines</text>
+<circle cx="435" cy="142" r="5.5" fill="#663399"/>
+<text x="452" y="147" class="language">CSS</text>
+<text x="812" y="147" class="detail" text-anchor="end">21.07%</text>
+<text x="741" y="147" class="detail" text-anchor="end">3.09 MB</text>
+<text x="659" y="147" class="detail" text-anchor="end">123k lines</text>
+<circle cx="30" cy="166" r="5.5" fill="#ededed"/>
+<text x="47" y="171" class="language">JSON</text>
+<text x="407" y="171" class="detail" text-anchor="end">3.95%</text>
+<text x="336" y="171" class="detail" text-anchor="end">579 kB</text>
+<text x="254" y="171" class="detail" text-anchor="end">26.7k lines</text>
+<circle cx="435" cy="166" r="5.5" fill="#3572A5"/>
+<text x="452" y="171" class="language">Python</text>
+<text x="812" y="171" class="detail" text-anchor="end">2.79%</text>
+<text x="741" y="171" class="detail" text-anchor="end">409 kB</text>
+<text x="659" y="171" class="detail" text-anchor="end">10k lines</text>
+<circle cx="30" cy="190" r="5.5" fill="#f34b7d"/>
+<text x="47" y="195" class="language">C++</text>
+<text x="407" y="195" class="detail" text-anchor="end">1.12%</text>
+<text x="336" y="195" class="detail" text-anchor="end">164 kB</text>
+<text x="254" y="195" class="detail" text-anchor="end">5.21k lines</text>
+<circle cx="435" cy="190" r="5.5" fill="#a91e50"/>
+<text x="452" y="195" class="language">EJS</text>
+<text x="812" y="195" class="detail" text-anchor="end">0.36%</text>
+<text x="741" y="195" class="detail" text-anchor="end">52.9 kB</text>
+<text x="659" y="195" class="detail" text-anchor="end">1.15k lines</text>
+<circle cx="30" cy="214" r="5.5" fill="#e34c26"/>
+<text x="47" y="219" class="language">HTML</text>
+<text x="407" y="219" class="detail" text-anchor="end">0.26%</text>
+<text x="336" y="219" class="detail" text-anchor="end">38.1 kB</text>
+<text x="254" y="219" class="detail" text-anchor="end">689 lines</text>
+<circle cx="435" cy="214" r="5.5" fill="#ededed"/>
+<text x="452" y="219" class="language">SVG</text>
+<text x="812" y="219" class="detail" text-anchor="end">0.25%</text>
+<text x="741" y="219" class="detail" text-anchor="end">37.3 kB</text>
+<text x="659" y="219" class="detail" text-anchor="end">3 lines</text>
+<path d="M24 236h798" stroke="#3d444d"/>
+<path d="M25 258h17v12H31l-5 4v-4h-1z m6 4-2 2 2 2 m4-4 2 2-2 2" class="icon"/>
+<text x="51" y="271" class="green count">4 Languages</text>
+<text x="423" y="305" text-anchor="middle" class="green">Recently used languages</text>
+<text x="423" y="327" text-anchor="middle" class="detail">Last 90 days · 27 public code commits · 88 files changed · share of changed lines</text>
+<clipPath id="recent-bar"><rect x="24" y="343" width="798" height="9" rx="4.5"/></clipPath>
+<g clip-path="url(#recent-bar)"><rect x="24" y="343" width="798" height="9" class="track"/>
+<rect x="24.000" y="343" width="498.420" height="9" fill="#3572A5"/>
+<rect x="522.420" y="343" width="158.446" height="9" fill="#DA5B0B"/>
+<rect x="680.866" y="343" width="127.438" height="9" fill="#3D6117"/>
+<rect x="808.304" y="343" width="13.696" height="9" fill="#cb171e"/>
+</g>
+<circle cx="30" cy="372" r="5.5" fill="#3572A5"/>
+<text x="47" y="377" class="language">Python</text>
+<text x="407" y="377" class="detail" text-anchor="end">62.46%</text>
+<text x="336" y="377" class="detail" text-anchor="end">7,169 lines</text>
+<circle cx="435" cy="372" r="5.5" fill="#DA5B0B"/>
+<text x="452" y="377" class="language">Jupyter Notebook</text>
+<text x="812" y="377" class="detail" text-anchor="end">19.86%</text>
+<text x="741" y="377" class="detail" text-anchor="end">2,279 lines</text>
+<circle cx="30" cy="396" r="5.5" fill="#3D6117"/>
+<text x="47" y="401" class="language">TeX</text>
+<text x="407" y="401" class="detail" text-anchor="end">15.97%</text>
+<text x="336" y="401" class="detail" text-anchor="end">1,833 lines</text>
+<circle cx="435" cy="396" r="5.5" fill="#cb171e"/>
+<text x="452" y="401" class="language">YAML</text>
+<text x="812" y="401" class="detail" text-anchor="end">1.72%</text>
+<text x="741" y="401" class="detail" text-anchor="end">197 lines</text>
+</svg>
