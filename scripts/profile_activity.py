@@ -327,7 +327,7 @@ def languages_svg(most_used, recently_used, dark: bool) -> str:
         f'.detail{{fill:{secondary};font-size:13px}}.language{{fill:{fg};font-size:16px}}',
         f'.icon{{fill:none;stroke:{secondary};stroke-width:1.4;stroke-linejoin:round}}.track{{fill:{track}}}',
         '</style>',
-        f'<rect x="0.5" y="0.5" width="845" height="{height-1}" rx="12" fill="{bg}" stroke="{border}"/>',
+        f'<rect x="0.5" y="0.5" width="845" height="{height-1}" rx="12" fill="{bg}"/>',
         *most,
         f'<path d="M24 {end}h798" stroke="{border}"/>',
         '<g class="recent">',
@@ -416,6 +416,10 @@ def recolor_calendar(root, theme):
 def contribution_svg(source: str, stats, theme: str) -> str:
     """Restyle the upstream 3D calendar and use its trailing window for all four tiles."""
     root = minidom.parseString(source).documentElement
+    # The first top-level rectangle is the frame behind the calendar artwork.
+    background = next(node for node in elements(root) if node.localName == 'rect')
+    if background.hasAttribute('stroke'):
+        background.removeAttribute('stroke')
     for group in elements(root):
         cards = {}
         for tile in elements(group):
